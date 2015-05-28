@@ -28,7 +28,7 @@ public class SimulationBatch {
 	simu.setMaxTimesteps(10000);
 	simu.setWarmingSteps(500);
 	simu.setWarmingSteps(0);
-	simu.setDisplay(true);
+	simu.setDisplay(false);
 
 	//simu.uavType = "UAVBasicPheromoneMovement";
 	//simu.uavType = "UAVDistributedPheromoneMovement";

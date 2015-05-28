@@ -11,6 +11,7 @@ import org.uav.aco.AbstractACO;
 import org.uav.aco.DistributedACO;
 import org.uav.autopilot.AbstractAutopilot;
 import org.uav.autopilot.AutopilotFixedWingOutOfSimulationAreaStrategy;
+import org.uav.graph.UAVGraph;
 import org.uav.status.Position;
 
 /**
@@ -19,7 +20,7 @@ import org.uav.status.Position;
  *
  */
 public class UAVDistributedPheromoneMovement 
-extends AbstractUAVNeighborhood {
+extends AbstractUAVCentralisedNeighbourhood {
 
     protected AbstractACO aco;
 
@@ -34,7 +35,7 @@ extends AbstractUAVNeighborhood {
      * @param id
      * @param aco
      */
-    public UAVDistributedPheromoneMovement(AbstractAutopilot auto, int id, AbstractACO aco) {
+    public UAVDistributedPheromoneMovement(AbstractAutopilot auto, int id, AbstractACO aco, UAVGraph uavGraph) {
 	super(auto, id, uavGraph);
 	this.aco = aco;
     }
@@ -48,7 +49,7 @@ extends AbstractUAVNeighborhood {
      * @param informationRadius
      */
     public UAVDistributedPheromoneMovement(AbstractAutopilot auto, int id,
-	    AbstractACO aco, int exchangeFrequency, int informationRadius) {
+	    AbstractACO aco, int exchangeFrequency, int informationRadius, UAVGraph uavGraph) {
 	super(auto, id, uavGraph);
 	this.aco = aco;
 	this.exchangeFrequency = exchangeFrequency;
